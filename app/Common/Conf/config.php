@@ -28,7 +28,7 @@ return array(
 
 	'DB_HOST'   => 'localhost', // 服务器地址
 
-	'DB_NAME'   => 'uoko',// 数据库名
+	'DB_NAME'   => 'seafood',// 数据库名
 
 	'DB_USER'   => 'root',		// 用户名
 
