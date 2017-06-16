@@ -49,7 +49,7 @@ class FangController extends AuthController {
         global $user;
 
         if(IS_POST){
-            if(!$_POST['sn']){$this->error('房源编号不能为空');exit;};
+            if(!$_POST['title']){$this->error('文章标题不能为空');exit;};
             $d=D('Fang');
             $data=$d->create();
             $data['time']  =NOW_TIME;
@@ -69,8 +69,7 @@ class FangController extends AuthController {
             }
         }else{
             $type=A('Communal/Type');
-            $this->area=$type->getSon(1240);//区域
-            $this->metro=$type->getSon(1263);//地铁
+            $this->types=$type->getSon(1238);
 
             $this->display();
         }
@@ -81,7 +80,7 @@ class FangController extends AuthController {
         global $user;
 
         if(IS_POST){
-            if(!$_POST['sn']){$this->error('房源编号不能为空');exit;};
+            if(!$_POST['title']){$this->error('文章标题不能为空');exit;};
             $d=D('Fang');        
             $data=$d->create();
 
@@ -100,8 +99,7 @@ class FangController extends AuthController {
             $row['text']=htmlspecialchars_decode($row['text']);
 
             $this->row=$row;
-            $this->area=$type->getSon(1240);//区域
-            $this->metro=$type->getSon(1263);//地铁
+            $this->types=$type->getSon(1238);
 
             $this->display();
         }

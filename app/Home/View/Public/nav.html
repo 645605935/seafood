@@ -1,0 +1,50 @@
+<?php
+//分类
+$type=A('Communal/Type');
+$cate_1=$type->getSon(1238);
+$cate_2=$type->getSon(1239);
+?>
+
+<div class="inner">
+	<ul class="list-none">
+		<li id="nav_10001" class="navdown"><a href="__APP__" title="首页" class="nav"><span>首页</span></a></li>
+		<li class="line"></li>
+		<li id="nav_1" class=""><a href="javascript:;" title="关于我们" class="hover-none nav"><span>关于我们</span></a>
+			<dl >
+				<dd style="border-top-style: none;"><a href="{:U('Home/Index/about')}" title="公司简介">公司简介</a></dd>
+				<dd><a href="{:U('Home/Index/about_1')}" title="企业文化" 0="">企业文化</a></dd>
+				<dd><a href="{:U('Home/Index/about_2')}" title="企业宗旨">企业宗旨</a></dd>
+				<dd class="last" style="border-bottom-style: none;"><a href="{:U('Home/Index/contact')}" title="联系我们">联系我们</a></dd>
+			</dl>
+		</li>
+		<li class="line"></li>
+		<li id="nav_2" class=""><a href="news.html" title="新闻中心" class="hover-none nav"><span>新闻中心</span></a>
+			<dl >
+				<foreach name="cate_1" item="v">
+					<dd><a href="{:U('Home/Product/index',array('tid'=>$v['id']))}" title="{$v.title}">{$v.title}</a></dd>
+				</foreach>
+			</dl>
+		</li>
+		<li class="line"></li>
+		<li id="nav_20" class=""><a href="products.html" title="产品展示" class="hover-none nav"><span>产品展示</span></a>
+			<dl >
+				<foreach name="cate_2" item="v">
+					<dd><a href="{:U('Home/Product/index',array('tid'=>$v['id']))}" title="{$v.title}">{$v.title}</a></dd>
+				</foreach>
+			</dl>
+		</li>
+		<li class="line"></li>
+		<li id="nav_4" class=""><a href="{:U('Home/Index/join')}" title="加盟合作" class="hover-none nav"><span>加盟合作</span></a>
+			<dl >
+				<dd style="border-top-style: none;"><a href="{:U('Home/Index/join15')}" title="加盟条件">加盟条件</a></dd>
+				<dd><a href="{:U('Home/Index/join16')}" title="加盟流程">加盟流程</a></dd>
+				<dd><a href="{:U('Home/Index/feedback')}" title="在线反馈">在线反馈</a></dd>
+				<dd class="last" style="border-bottom-style: none;"><a href="{:U('Home/Index/contact')}" title="联系我们" 0="">联系我们</a></dd>
+			</dl>
+		</li>
+		<li class="line"></li>
+		<li id="nav_19" class=""><a href="{:U('Home/Index/feedback')}" title="在线反馈" class="hover-none nav"><span>在线反馈</span></a></li>
+		<li class="line"></li>
+		<li id="nav_5"><a href="{:U('Home/Index/contact')}" title="联系我们" class="hover-none nav"><span>联系我们</span></a></li>
+	</ul>
+</div>

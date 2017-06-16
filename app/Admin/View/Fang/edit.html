@@ -96,7 +96,7 @@
 					<div class="page-content">
 						<div class="page-header">
 							<h1>
-								编辑房源
+								编辑文章
 							</h1>
 						</div><!-- /.page-header -->
 
@@ -107,7 +107,7 @@
 								    <div class="panel-heading" role="tab" id="headingOne">
 								      <h4 class="panel-title">
 								        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-								          编辑房源
+								          编辑文章
 								        </a>
 								      </h4>
 								    </div>
@@ -116,15 +116,7 @@
 								        <form action="{:U('Admin/Fang/edit')}" id="myform" class="form-horizontal" role="form" method="post" enctype="multipart/form-data">
         									<input type="hidden" value="{$row['id']}" name="id">
         									<div class="form-group">
-        										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 房源编号</label>
-
-        										<div class="col-sm-9">
-        											<input type="text" id="form-field-1" name="sn" value="{$row['sn']}" class="col-xs-10 col-sm-5" />
-        										</div>
-        									</div>
-
-        									<div class="form-group">
-        										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 房源名称</label>
+        										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 文章标题</label>
 
         										<div class="col-sm-9">
         											<input type="text" id="form-field-1" name="title" value="{$row['title']}" class="col-xs-10 col-sm-5" />
@@ -132,34 +124,13 @@
         									</div>
 
         									<div class="form-group">
-        										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 地址</label>
-
-        										<div class="col-sm-9">
-        											<input type="text" id="form-field-1" name="address" value="{$row['address']}" class="col-xs-10 col-sm-5" />
-        										</div>
-        									</div>
-
-        									<div class="form-group">
-												<label class="col-sm-3 control-label no-padding-right" for="form-field-first">所属区域</label>
+												<label class="col-sm-3 control-label no-padding-right" for="form-field-first">分类</label>
 
 												<div class="col-sm-9">
-													<select name="area">
+													<select name="tid">
 									                    <option value="">请选择分类</option>
-									                    <foreach name="area" item="v">
-									                    	<option value="{$v.title}" <if condition="$row['area'] eq $v['title']">selected</if>>{$v.title}</option>
-									                    </foreach>
-									                </select>
-												</div>
-											</div>
-
-											<div class="form-group">
-												<label class="col-sm-3 control-label no-padding-right" for="form-field-first">地铁</label>
-
-												<div class="col-sm-9">
-													<select name="metro">
-									                    <option value="">请选择分类</option>
-									                    <foreach name="metro" item="v">
-									                    	<option value="{$v.title}" <if condition="$row['metro'] eq $v['title']">selected</if>>{$v.title}</option>
+									                    <foreach name="types" item="v">
+									                    	<option value="{$v.id}" <if condition="$row['tid'] eq $v['id']">selected</if>>{$v.title}</option>
 									                    </foreach>
 									                </select>
 												</div>
@@ -174,7 +145,7 @@
         									</div>
 
         									<div class="form-group">
-        										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 站点描述</label>
+        										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 文章描述</label>
 
         										<div class="col-sm-9">
         											<input type="text" id="form-field-1" name="description" value="{$row['description']}" class="col-xs-10 col-sm-5" />
@@ -183,7 +154,7 @@
 
 
                                             <div class="form-group">
-                                                <label class="col-sm-3 control-label no-padding-right" for="form-field-tags">房源图片</label>
+                                                <label class="col-sm-3 control-label no-padding-right" for="form-field-tags">图片</label>
                                                 <div class="col-sm-9">
                                                     <div class="widget-body">
                                                         <div class="widget-main">
@@ -202,7 +173,7 @@
                                                 <div class="row">
                                                     <div class="col-xs-12 col-sm-10 col-sm-offset-2">
                                                         <h3 class="header blue lighter">
-                                                                房源详情
+                                                                文章详情
                                                         </h3>
                                                     </div>
                                                 </div>

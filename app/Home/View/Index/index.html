@@ -1,110 +1,214 @@
-<?php $web_set=D('config')->find(1); ?>
-<html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>ANDON系统-后台登录界面</title>
-		<link type="text/css" rel="stylesheet" href="__PUBLIC__/login_wow/style.css">
-		<script src="__PUBLIC__/Admin/assets/js/jquery.min.js"></script>
-		<style type="text/css">
-			body{
-				background: url('__PUBLIC__/login_wow/log_bg.jpg') no-repeat center center;
-				background-size: 100% 100%;
-			}
-		    .logbg img {
-		        width: 100%;
-		    }
-			.logk {
-			    width: 701px;
-			    height: 437px;
-			    position: absolute;
-			    top: 50%;
-			    left: 50%;
-			    margin-top: -218px;
-			    margin-left: -350px;
-			    background: url(__PUBLIC__/login_wow/logk_bg.png) no-repeat;
-			    z-index: 2;
-			}
-		</style>
-	</head>
-	<body>
-		<!-- 登录框 -->
-		<div class="logk">
-			<ul class="dlmes">
-				<form action="{:U('Admin/Login/index')}" method="post" id="home_login">
-					<div class="aspNetHidden">
-						<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMjA1MzU5MTAxMWRk7TSQf/F8PxjP+PaL6KP7ORMVF5sxuz1xjzgfmN09v+o=">
+<!DOCTYPE html>
+<!-- saved from url=(0038)http://www.metinfo.cn/demo/met093/266/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style media="screen"></style>
+<meta name="renderer" content="webkit">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>聚海源国际水产公司|聚海源国际水产企业网站-聚海源国际水产</title>
+<meta name="description" content="">
+<meta name="keywords" content="聚海源国际水产">
+<meta name="generator" content="MetInfo 5.2.8">
+<link href="http://www.metinfo.cn/demo/met093/266/favicon.ico" rel="shortcut icon">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/metinfo_ui.css" id="metuimodule" data-module="10001">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/metinfo(1).css">
+<script src="__PUBLIC__/Home/js/jQuery1.7.2.js" type="text/javascript"></script>
+<script src="__PUBLIC__/Home/js/metinfo_ui.js" type="text/javascript"></script>
+<script src="__PUBLIC__/Home/js/ch.js" type="text/javascript"></script>
+<!--[if IE]>
+<script src="js/html5.js" type="text/javascript"></script>
+<![endif]-->
+<script type="text/javascript" src="__PUBLIC__/Home/js/banner.js"></script><script type="text/javascript" src="__PUBLIC__/Home/js/DD_belatedPNG_0.0.8a.js"></script>
+	<!--<iframe id="wbifr" name="wbifr" width="1px" height="1px" src="fakepc.html"></iframe>-->
+	<script type="text/javascript" src="__PUBLIC__/Home/js/core.php" charset="utf-8"></script></head>
+
+
+
+<!--[if lte IE 6]>
+<script src="js/DD_belatedPNG_0.0.8a.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        DD_belatedPNG.fix('#banner #ifocus_btn .current, #ifocus_btn li, #News h3, .sb_nav h3.title,#sidebar dl dt.on, #sidebar dl dt:hover, #sidebar dl dd h4, #sidebar dl dt');
+    </script>
+<![endif]-->
+<body>
+<header>
+	<include file="Public:head" />
+</header>
+<nav>
+	<include file="Public:nav" />
+</nav>
+<div class="bannner" style="height:524px;">
+	<div class="indimg">
+		<div class="banner">
+			<div id="banner">
+				<div id="ifocus" >
+					<div id="ifocus_pic" >
+						<div style=" left: 0px" id="ifocus_piclist">
+							<ul >
+								<li><a href="" title="" target="_blank"> <img src="__PUBLIC__/Home/images/1409020295.jpg" alt="" > </a></li>
+								<li><a href="" title="" target="_blank"> <img src="__PUBLIC__/Home/images/1409020460.jpg" alt="" > </a></li>
+								<li><a href="" title="" target="_blank"> <img src="__PUBLIC__/Home/images/1409020503.jpg" alt="" > </a></li>
+							</ul>
+						</div>
+						<div id="ifocus_btn">
+							<ul>
+								<li class="">&nbsp;</li>
+								<li class="current">&nbsp;</li>
+								<li class="">&nbsp;</li>
+							</ul>
+						</div>
 					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="index">
+	<div id="News">
+		<div class="inner">
+			<h3><span>新闻中心</span></h3>
+			<ul>
+				<div class="soroll">
+					<ol class="list-none metlist" >
+						<li class="list "><a href="news3.html" title="墨西哥湾泄漏原油被疑已渗入海洋食物链" target="_self">墨西哥湾泄漏原油被疑已渗入海洋食物链</a></li>
+						<li class="list "><a href="news1.html" title="集团产品火爆热销中" target="_self">集团产品火爆热销中</a></li>
+						<li class="list "><a href="news14.html" title="公司召开2013年一季度经济形势分析会" target="_self">公司召开2013年一季度经济形势分析会</a></li>
+						<li class="list top"><a href="news16.html" title="全球水产品市场现状和总体趋势" target="_self">全球水产品市场现状和总体趋势</a></li>
+						<li class="list "><a href="news15.html" title="2013年全国聚海源国际水产经济快速增长" target="_self">2013年全国聚海源国际水产经济快速增长</a></li>
+						<li class="list "><a href="news8.html" title="投资逾40亿元的多个用海大项目即将进驻旅顺口区" target="_self">投资逾40亿元的多个用海大项目即将进驻旅顺口区</a></li>
+						<li class="list "><a href="news7.html" title="黄渤海区扎实推进水生生物增殖放流活动" target="_self">黄渤海区扎实推进水生生物增殖放流活动</a></li>
+						<li class="list "><a href="news6.html" title="第16届中国国际渔博会青岛开幕 规模创历届之最" target="_self">第16届中国国际渔博会青岛开幕 规模创历届之最</a></li>
+						<li class="list "><a href="news5.html" title="中国海监总队领导来我省调研海岛执法工作" target="_self">中国海监总队领导来我省调研海岛执法工作</a></li>
+						<li class="list "><a href="news4.html" title="海产品养殖业加工也已成威海市海洋支柱产业" target="_self">海产品养殖业加工也已成威海市海洋支柱产业</a></li>
+					</ol>
+				</div>
+			</ul>
+			<div id="productsearch" class="data-valuez=&#39;&#39;">
+				<span><i style="float:left;"></i></span>
+				<span>
+					<form method="POST" name="myform1" action="js/search.php?lang=cn" target="_self">
+						<input type="hidden" name="lang" value="cn">&nbsp;<input type="hidden" name="searchtype" value="0">&nbsp;
+						<span class="navsearch_input"><input type="text" name="searchword" size="20"></span>&nbsp;
+						<input class="searchimage" type="image" src="__PUBLIC__/Home/images/index_btn.gif">
+					</form>
+				</span>
+			</div>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div id="features-index">
+		<div class="bound">
+			<div class="a1 ">
+				<div>
+					<a href="about.html">
+						<span class="ph" >
+							<h4 class="c_blue"> 关于我们</h4>
+							<p>秉承“勤奋、责任、敬业、创新”的集团精神，坚持“追求卓越、奉献社会”的经营理念。</p>
+						</span> <img src="__PUBLIC__/Home/images/1409026668.jpg" alt="关于我们" class="ph" >
+					</a>
+				</div>
+				<div>
+					<a href="join.html">
+						<span class="ph" >
+							<h4 class="c_orange"> 加盟合作</h4>
+							<p>聚海源国际水产有限公司自成立之日起，就把与各界朋友的真诚合作放在首要的地位。</p>
+						</span> <img src="__PUBLIC__/Home/images/1409026710.jpg" alt="加盟合作" class="ph" >
+					</a>
+				</div>
+			</div>
+					
+			<div class="a2 ">
+				<div>
+					<a href="products.html">
+						<span class="ph" >
+							<h4 class="c_green"> 产品展示</h4>
+							<p>集海产养殖业、水产育苗业、水产品加工业、市场销售、水产贸易为一体的综合性集团公司。</p>
+						</span> <img src="__PUBLIC__/Home/images/1409026246.jpg" alt="产品展示" class="ph" >
+					</a>
+				</div>
 
-					<div class="aspNetHidden">
+				<div>
+					<a href="products_2.html">
+						<span class="ph" >
+							<h4 class="c_orange"> 贝类产品</h4>
+							<p>将大连最优质的海珍品献给客户；立福字商标：尽心尽力做好品质与服务。</p>
+						</span> <img src="__PUBLIC__/Home/images/1409031709.jpg" alt="贝类产品" class="ph" >
+					</a>
+				</div>
+			</div>
+			
 
-						<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="8DCF64F6">
-					</div>
-					<li>
-						<label for="">
-						<span>用户名</span>
-						<i>Username</i>
-					</label>
-						<input name="username" type="text" id="username" class="txt">
+			<div class="a3 ">
+				<div>
+					<a href="products_1.html">
+						<span class="ph" >
+							<h4 class="c_blue"> 鱼类产品</h4>
+							<p> 勤奋：事无巨细，将每个细节都做好；责任：为企业、为客户服务的使命感。</p>
+						</span> <img src="__PUBLIC__/Home/images/1409031860.jpg" alt="鱼类产品" class="ph" >
+					</a>
+				</div>
+				<div>
+					<a href="products_3.html">
+						<span class="ph" >
+							<h4 class="c_orange"> 虾类产品</h4>
+							<p>加速推进现代聚海源国际水产和现代海洋牧场建设，在加快发展中注重求真务实，创新高效。</p>
+						</span> <img src="__PUBLIC__/Home/images/1409032404.jpg" alt="虾类产品" class="ph" >
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
 
-					</li>
-					<li>
-						<label for="">
-						<span>密   码</span>
-						<i>Password</i>
-					</label>
-						<input name="password" type="password" id="password" class="txt">
+	<div class="index-link linkx">
+		<div class="bound">
+			<h3 class="title"> 友情链接:</h3>
+			<div class="img" style="width: 883px;"
+			<ul class="list-none">
 
-					</li>
-					<li style="margin-top:50px;">
-						<input type="button" name="Button1" value="登录" id="Button1" class="sub">
-					</li>
-				</form>
 			</ul>
 		</div>
+		<div class="txt" style="width: 883px;">
+			<ul class="list-none">
+				<li><a href="http://www.yyj.moa.gov.cn/" target="_blank" title="">中国渔业政务网</a></li>
+				<li><a href="http://www.zgyy.com.cn/" target="_blank" title="">中国渔业网</a></li>
+				<li><a href="http://www.fish.cn/" target="_blank" title="">中国渔业信息网</a></li>
+				<li><a href="http://www.china-cfa.org/" target="_blank" title="">中国渔业协会</a></li>
+				<li><a href="http://www.ffrc.cn/home/index.asp" target="_blank" title="">中国水产科学研究院淡水渔业研究中心</a></li>
+				<li><a href="http://www.fisherycity.com/" target="_blank" title="">中华水产商城网</a></li>
+				<li><a href="http://www.fmiri.com/" target="_blank" title="">渔业机械仪器研究所</a></li>
+				<li><a href="http://www.cafs.ac.cn/" target="_blank" title="">中国水产科技网</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+</div>
+<div class="clear"></div>
 
-				<script type="text/javascript">
+<footer>
+	<div class="inner">
+		<div class="foot-nav">
+			<a href="about.html" title="关于我们">关于我们</a><span>|</span>
+			<a href="search" title="全站搜索">全站搜索</a><span>|</span>
+			<a href="link" title="友情链接">友情链接</a><span>|</span>
+			<a href="sitemap" title="网站地图">网站地图</a><span>|</span>
+			<a href="join.html" title="加盟合作">加盟合作</a><span>|</span>
+			<a href="contact.html" title="联系我们">联系我们</a>
+			<div class="clear">
+			</div>
+		</div>
+		<div class="foot-text">
+			<p>聚海源国际水产 版权所有 津ICP备8888888
+				<script src="js/stat.php" language="JavaScript"></script>
+				<script src="js/core.php" charset="utf-8" type="text/javascript"></script>
+				<a href="http://www.cnzz.com/stat/website.php?web_id=1670348" target="_blank" title="站长统计">站长统计</a>
+				<script src="__PUBLIC__/Home/js/metinfo(2).js"></script>
+			</p>
+			<p>电话：0731-12345678 12345678  QQ:88888888 999999  Email:admin@admin.com</p>
+			<div id="metinfo_91mb_Powered"></div>
+			<p></p>
+		</div>
+	</div>
+</footer>
+<script src="__PUBLIC__/Home/js/fun.inc.js" type="text/javascript"></script>
 
-					$(function(){
-						//模拟登录点击
-						$(document).keyup(function(event){
-						   	if(event.keyCode ==13){
-						     	$("#Button1").trigger("click");
-						   	}
-						});
 
-						// 登录
-						$("#Button1").click(function() {
-							var url = window.location.href;
-							var username = $('#username').val();
-							var password = $('#password').val();
-
-							if(username==''){
-								$('#username').focus();return;
-							}
-							if(password==''){
-								$('#password').focus();return;
-							}
-
-							$.ajax({
-							    url : "{:U('Home/Index/ajaxIsCanLogin')}",
-							    data : {
-							        "url" : url,
-							        "username" : username,
-							        "password" : password
-							    },
-							    type : "post",
-							    success : function(data){
-							        var data = eval("("+data+")");
-							        if(data.status!="1"){
-							            alert('登录失败');
-							        }else{
-							        	$('form#home_login').submit();
-							        }
-							    }
-							}); 
-						});
-					});
-
-				</script>
-	</body>
-</html>
+</body></html>

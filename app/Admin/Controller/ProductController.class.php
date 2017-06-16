@@ -49,7 +49,7 @@ class ProductController extends AuthController {
         global $user;
 
         if(IS_POST){
-            if(!$_POST['sn']){$this->error('房源编号不能为空');exit;};
+            if(!$_POST['title']){$this->error('名称不能为空');exit;};
             $d=D('Product');
             $data=$d->create();
             $data['time']  =NOW_TIME;
@@ -58,7 +58,7 @@ class ProductController extends AuthController {
             if($id=$d->add($data)){
                 if($_FILES['img']['size']>0){
                     $image=new \Common\Extend\Image();
-                    $img=$image->upload($_FILES['img'],filePath($user['uid'],'Fang'),'thumb');
+                    $img=$image->upload($_FILES['img'],filePath($user['uid'],'Product'),'thumb');
                     $update['img']      =$img['origin_'];
                     $update['id']=$id;
                     $d->save($update);
@@ -69,8 +69,7 @@ class ProductController extends AuthController {
             }
         }else{
             $type=A('Communal/Type');
-            $this->area=$type->getSon(1240);//区域
-            $this->metro=$type->getSon(1263);//地铁
+            $this->types=$type->getSon(1239);
 
             $this->display();
         }
@@ -81,13 +80,13 @@ class ProductController extends AuthController {
         global $user;
 
         if(IS_POST){
-            if(!$_POST['sn']){$this->error('房源编号不能为空');exit;};
+            if(!$_POST['title']){$this->error('名称不能为空');exit;};
             $d=D('Product');        
             $data=$d->create();
 
             if($_FILES['img']['size']>0){
                 $image=new \Common\Extend\Image();
-                $img=$image->upload($_FILES['img'],filePath($user['uid'],'Fang'),'thumb');
+                $img=$image->upload($_FILES['img'],filePath($user['uid'],'Product'),'thumb');
                 $data['img']    =$img['origin_'];
             }else{
                 unset($data['img']);
@@ -100,8 +99,7 @@ class ProductController extends AuthController {
             $row['text']=htmlspecialchars_decode($row['text']);
 
             $this->row=$row;
-            $this->area=$type->getSon(1240);//区域
-            $this->metro=$type->getSon(1263);//地铁
+            $this->types=$type->getSon(1239);
 
             $this->display();
         }

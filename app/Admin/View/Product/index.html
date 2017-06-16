@@ -181,7 +181,8 @@
                           <tfoot>
                             <tr>
                               <td>
-                                <button style="float:left;" class="layui-btn id-btn-dialog2_add" title="id-btn-dialog2_add"> 添加 </button>
+                                <a style="float:left;" href="{:U('Admin/Product/add')}" class="layui-btn search_btn" >添加</a>
+
                                 <a style="float:right;" href="{:U('Admin/User/homeUser')}" class="layui-btn search_btn" >重置</a>
                                 <button style="float:right;" type="submit" class="layui-btn search_btn" id="search_submit" name="submit" title="search_btn">搜索</button>
                               </td>
@@ -205,9 +206,7 @@
 
                     <div class="col-xs-12">
                         <div class="panel panel-default">
-                          <div class="panel-heading">房源列表
-                              <!-- <a href="javascript:void(0)" id="hcg">隐藏列</a> -->
-                              <!-- <a href="javascript:void(0)" id="scg">显示列</a> -->
+                          <div class="panel-heading">产品列表
                           </div>
                           <div class="panel-body">
                             <table id="grid-table"></table>
@@ -391,19 +390,17 @@
         var grid_data=_ajax_list_device(_username,_gid);
 
         jQuery(grid_selector).jqGrid({
-          caption: "房源列表",
+          caption: "产品列表",
           data: grid_data,
           datatype: "local",
-          colNames:['id', '图片', '编号', '名称','地址', '区域', '地铁', '关键字', '时间', '操作'],
+          colNames:['id', '图片', '标题', '分类', '描述', '关键字', '时间', '操作'],
           colModel:[
             {name:'id', index:'id', sorttype:"int", align:"center", hidden: true},
 
             {name:'img',index:'img',align:"center", formatter: imgFormatter },
-            {name:'sn',index:'sn',align:"center"},
             {name:'title',index:'title',align:"center"},
-            {name:'address',index:'address',align:"center"},
-            {name:'area',index:'area',align:"center" },
-            {name:'metro',index:'metro',align:"center",hidden: true},
+            {name:'type',index:'type',align:"center"},
+            {name:'description',index:'description',align:"center"},
             {name:'keywords',index:'keywords',align:"center"},
             {name:'time',index:'time',align:"center"},
 
@@ -429,32 +426,6 @@
             setTimeout(function(){
               updatePagerIcons(table);
             }, 0);
-          },
-
-          onSelectRow : function(ids) {
-            $('#grid-table-2').jqGrid('clearGridData');
-
-            if (ids == null) {
-              ids = 0;
-              if (jQuery("#grid-table-2").jqGrid('getGridParam','records') > 0) {
-                jQuery("#grid-table-2").jqGrid('setGridParam', {
-                      url : "index.php?s=/Admin/Huxing/ajax_get_product_relation_huxings.html&id=" + ids,
-                      page : 1
-                    });
-                jQuery("#grid-table-2").jqGrid('setCaption',"户型列表: " + ids).trigger('reloadGrid');
-              }
-            } else {
-              jQuery("#grid-table-2").jqGrid('setGridParam', {
-                url : "index.php?s=/Admin/Huxing/ajax_get_product_relation_huxings.html&id=" + ids,
-                page : 1
-              });
-
-
-              var id=ids;   
-              var _rowData = $(grid_selector).jqGrid('getRowData',id);console.log(11111);
-              console.log(_rowData);
-              jQuery("#grid-table-2").jqGrid('setCaption',"户型列表: " + _rowData.sn +"▶"+ _rowData.title).trigger('reloadGrid');
-            }
           },
 
           gridComplete:function(){  //在此事件中循环为每一行添加修改和删除链接
@@ -529,74 +500,6 @@
         				});
         			}
         });
-
-        
-        jQuery("#grid-table-2").jqGrid({
-          url : "index.php?s=/Admin/Huxing/ajax_get_product_relation_huxings.html&id=0",
-          datatype: "json",
-          colNames:['id', '图片', '户型名称', '类型', '面积', '风格', '卫生间', '朝向', '阳台', '付款方式', '出租状态', '价格', '室友', '时间', '操作'],
-          colModel:[
-            {name:'id', index:'id', sorttype:"int", align:"center", hidden: true, editable: true ,sortable: false},
-
-            {name:'img',index:'img',align:"center", formatter: imgFormatter },
-            {name:'title',index:'title',align:"center"},
-            {name:'leixing',index:'leixing',align:"center"},
-            {name:'mianji',index:'mianji',align:"center"},
-            {name:'fengge',index:'fengge',align:"center"},
-            {name:'weishengjian',index:'weishengjian',align:"center" },
-            {name:'chaoxiang',index:'chaoxiang',align:"center",hidden: true},
-            {name:'yangtai',index:'yangtai',align:"center"},
-            {name:'payment',index:'payment',align:"center"},
-            {name:'status',index:'status',align:"center"},
-            {name:'price',index:'price',align:"center"},
-            {name:'shiyou',index:'shiyou',align:"center"},
-            {name:'time',index:'time',align:"center"},
-
-            {name:'operates',index:'operates',align:'center',sortable:false,width:200}
-          ], 
-          rownumbers:true,
-          rownumWidth:50,//设置行号列宽度
-          rowNum:10,
-          rowList:[10,100,1000],
-          // pager : '#grid-pager-2',
-          viewrecords : true,
-          autowidth:true,
-          shrinkToFit:true,//ture，则按比例初始化列宽度。如果为false，则列宽度使用colModel指定的宽度
-          // height : 250,
-          caption : "操作日志",
-
-          loadComplete : function(data) {
-            var table = this;
-            setTimeout(function(){
-              updatePagerIcons(table);
-            }, 0);
-          },
-
-          onSelectRow : function(ids) {
-            
-          },
-
-          gridComplete:function(){  //在此事件中循环为每一行添加修改和删除链接
-              var ids=jQuery(grid_selector_2).jqGrid('getDataIDs');
-              for(var i=0; i<ids.length; i++){
-
-                  var id=ids[i];   
-                  var _rowData = $(grid_selector_2).jqGrid('getRowData',id);
-
-                  var operates =""; 
-                      operates += "<a style='margin-right:5px;' class='btn btn-primary btn-xs' href='index.php?s=/Admin/Huxing/edit.html&id="+_rowData.id+"' data-id='"+_rowData.id+"'>编辑</a>";
-                      operates += "<button class='btn btn-danger btn-xs id-btn-dialog2_del_huxing' data-id='"+_rowData.id+"'>删除</button>";
-
-                  jQuery(grid_selector_2).jqGrid('setRowData', ids[i], { operates: operates });
-              }
-          },
-
-        }).navGrid('#grid-pager-2', {
-          add : false,
-          edit : false,
-          del : false
-        });
-
 
         //更新分页图标  
         function updatePagerIcons(table) {
@@ -1171,7 +1074,7 @@
               async:false,
               type:'get',  
               contentType:"application/x-www-form-urlencoded",
-              url : "{:U('Admin/Product/ajax_get_Product_list')}",
+              url : "{:U('Admin/Product/ajax_get_product_list')}",
               data: {'username':_username, 'gid':_gid},
               dataType : 'json',
               success  : function(json) { 

@@ -181,7 +181,8 @@
                           <tfoot>
                             <tr>
                               <td>
-                                <button style="float:left;" class="layui-btn id-btn-dialog2_add" title="id-btn-dialog2_add"> 添加 </button>
+                                <a style="float:left;" href="{:U('Admin/Fang/add')}" class="layui-btn search_btn" >添加</a>
+
                                 <a style="float:right;" href="{:U('Admin/User/homeUser')}" class="layui-btn search_btn" >重置</a>
                                 <button style="float:right;" type="submit" class="layui-btn search_btn" id="search_submit" name="submit" title="search_btn">搜索</button>
                               </td>
@@ -205,9 +206,7 @@
 
                     <div class="col-xs-12">
                         <div class="panel panel-default">
-                          <div class="panel-heading">房源列表
-                              <!-- <a href="javascript:void(0)" id="hcg">隐藏列</a> -->
-                              <!-- <a href="javascript:void(0)" id="scg">显示列</a> -->
+                          <div class="panel-heading">文章列表
                           </div>
                           <div class="panel-body">
                             <table id="grid-table"></table>
@@ -394,16 +393,14 @@
           caption: "房源列表",
           data: grid_data,
           datatype: "local",
-          colNames:['id', '图片', '编号', '名称','地址', '区域', '地铁', '关键字', '时间', '操作'],
+          colNames:['id', '图片', '标题', '分类', '描述', '关键字', '时间', '操作'],
           colModel:[
             {name:'id', index:'id', sorttype:"int", align:"center", hidden: true},
 
             {name:'img',index:'img',align:"center", formatter: imgFormatter },
-            {name:'sn',index:'sn',align:"center"},
             {name:'title',index:'title',align:"center"},
-            {name:'address',index:'address',align:"center"},
-            {name:'area',index:'area',align:"center" },
-            {name:'metro',index:'metro',align:"center",hidden: true},
+            {name:'type',index:'type',align:"center"},
+            {name:'description',index:'description',align:"center"},
             {name:'keywords',index:'keywords',align:"center"},
             {name:'time',index:'time',align:"center"},
 
