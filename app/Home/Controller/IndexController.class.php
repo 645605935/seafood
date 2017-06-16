@@ -19,16 +19,24 @@ class IndexController extends CommonController{
 
         $this->url=$url;
 
-        // 记住我  start
-        $password = cookie('remember_password');
-        $username = cookie('remember_username');
-        $remember = cookie('remember_remember');
+        //分类
+        $type=A('Communal/Type');
+        $focus=$type->getSon(1303);
+        $six_1=$type->getRow(1305);
+        $six_2=$type->getRow(1306);
+        $six_3=$type->getRow(1307);
+        $six_4=$type->getRow(1308);
+        $six_5=$type->getRow(1309);
+        $six_6=$type->getRow(1310);
 
-        if($password && $username){
-            $this->assign('password',$password);
-            $this->assign('username',$username);
-            $this->assign('remember',$remember);
-        }
+        
+        $this->focus=$focus;
+        $this->six_1=$six_1;
+        $this->six_2=$six_2;
+        $this->six_3=$six_3;
+        $this->six_4=$six_4;
+        $this->six_5=$six_5;
+        $this->six_6=$six_6;
 
         // 记住我  end
         $this->display();
@@ -63,6 +71,13 @@ class IndexController extends CommonController{
     }
 
     public function feedback(){
+        if($_POST){
+            $data=$_POST;
+            if($id=M('Message')->add($data)){
+                $this->success('提交成功');
+            };
+        }
+
         $this->display();
     }
 

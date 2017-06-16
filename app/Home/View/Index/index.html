@@ -44,16 +44,16 @@
 					<div id="ifocus_pic" >
 						<div style=" left: 0px" id="ifocus_piclist">
 							<ul >
-								<li><a href="" title="" target="_blank"> <img src="__PUBLIC__/Home/images/1409020295.jpg" alt="" > </a></li>
-								<li><a href="" title="" target="_blank"> <img src="__PUBLIC__/Home/images/1409020460.jpg" alt="" > </a></li>
-								<li><a href="" title="" target="_blank"> <img src="__PUBLIC__/Home/images/1409020503.jpg" alt="" > </a></li>
+								<foreach name="focus" item="v">
+									<li><a href="" title="" target="_blank"> <img src="__UPLOAD__/{$v.img}" alt="" > </a></li>
+								</foreach>
 							</ul>
 						</div>
 						<div id="ifocus_btn">
 							<ul>
-								<li class="">&nbsp;</li>
-								<li class="current">&nbsp;</li>
-								<li class="">&nbsp;</li>
+								<foreach name="focus" item="v">
+									<li class="<if condition='$key eq 0'>current</if>">&nbsp;</li>
+								</foreach>
 							</ul>
 						</div>
 					</div>
@@ -101,17 +101,17 @@
 				<div>
 					<a href="about.html">
 						<span class="ph" >
-							<h4 class="c_blue"> 关于我们</h4>
-							<p>秉承“勤奋、责任、敬业、创新”的集团精神，坚持“追求卓越、奉献社会”的经营理念。</p>
-						</span> <img src="__PUBLIC__/Home/images/1409026668.jpg" alt="关于我们" class="ph" >
+							<h4 class="c_blue"> {$six_1.title}</h4>
+							<p>{$six_1.desc}</p>
+						</span> <img src="__UPLOAD__/{$six_1.img}" alt="{$six_1.title}" class="ph" >
 					</a>
 				</div>
 				<div>
 					<a href="join.html">
 						<span class="ph" >
-							<h4 class="c_orange"> 加盟合作</h4>
-							<p>聚海源国际水产有限公司自成立之日起，就把与各界朋友的真诚合作放在首要的地位。</p>
-						</span> <img src="__PUBLIC__/Home/images/1409026710.jpg" alt="加盟合作" class="ph" >
+							<h4 class="c_orange"> {$six_2.title}</h4>
+							<p>{$six_2.desc}</p>
+						</span> <img src="__UPLOAD__/{$six_2.img}" alt="{$six_2.title}" class="ph" >
 					</a>
 				</div>
 			</div>
@@ -120,18 +120,18 @@
 				<div>
 					<a href="products.html">
 						<span class="ph" >
-							<h4 class="c_green"> 产品展示</h4>
-							<p>集海产养殖业、水产育苗业、水产品加工业、市场销售、水产贸易为一体的综合性集团公司。</p>
-						</span> <img src="__PUBLIC__/Home/images/1409026246.jpg" alt="产品展示" class="ph" >
+							<h4 class="c_green"> {$six_3.title}</h4>
+							<p>{$six_3.desc}</p>
+						</span> <img src="__UPLOAD__/{$six_3.img}" alt="{$six_3.title}" class="ph" >
 					</a>
 				</div>
 
 				<div>
 					<a href="products_2.html">
 						<span class="ph" >
-							<h4 class="c_orange"> 贝类产品</h4>
-							<p>将大连最优质的海珍品献给客户；立福字商标：尽心尽力做好品质与服务。</p>
-						</span> <img src="__PUBLIC__/Home/images/1409031709.jpg" alt="贝类产品" class="ph" >
+							<h4 class="c_orange"> {$six_4.title}</h4>
+							<p>{$six_4.desc}</p>
+						</span> <img src="__UPLOAD__/{$six_4.img}" alt="{$six_4.title}" class="ph" >
 					</a>
 				</div>
 			</div>
@@ -141,17 +141,17 @@
 				<div>
 					<a href="products_1.html">
 						<span class="ph" >
-							<h4 class="c_blue"> 鱼类产品</h4>
-							<p> 勤奋：事无巨细，将每个细节都做好；责任：为企业、为客户服务的使命感。</p>
-						</span> <img src="__PUBLIC__/Home/images/1409031860.jpg" alt="鱼类产品" class="ph" >
+							<h4 class="c_blue"> {$six_5.title}</h4>
+							<p> {$six_5.desc}</p>
+						</span> <img src="__UPLOAD__/{$six_5.img}" alt="{$six_5.title}" class="ph" >
 					</a>
 				</div>
 				<div>
 					<a href="products_3.html">
 						<span class="ph" >
-							<h4 class="c_orange"> 虾类产品</h4>
-							<p>加速推进现代聚海源国际水产和现代海洋牧场建设，在加快发展中注重求真务实，创新高效。</p>
-						</span> <img src="__PUBLIC__/Home/images/1409032404.jpg" alt="虾类产品" class="ph" >
+							<h4 class="c_orange"> {$six_6.title}</h4>
+							<p>{$six_6.desc}</p>
+						</span> <img src="__UPLOAD__/{$six_6.img}" alt="{$six_6.title}" class="ph" >
 					</a>
 				</div>
 			</div>
@@ -184,29 +184,7 @@
 <div class="clear"></div>
 
 <footer>
-	<div class="inner">
-		<div class="foot-nav">
-			<a href="about.html" title="关于我们">关于我们</a><span>|</span>
-			<a href="search" title="全站搜索">全站搜索</a><span>|</span>
-			<a href="link" title="友情链接">友情链接</a><span>|</span>
-			<a href="sitemap" title="网站地图">网站地图</a><span>|</span>
-			<a href="join.html" title="加盟合作">加盟合作</a><span>|</span>
-			<a href="contact.html" title="联系我们">联系我们</a>
-			<div class="clear">
-			</div>
-		</div>
-		<div class="foot-text">
-			<p>聚海源国际水产 版权所有 津ICP备8888888
-				<script src="js/stat.php" language="JavaScript"></script>
-				<script src="js/core.php" charset="utf-8" type="text/javascript"></script>
-				<a href="http://www.cnzz.com/stat/website.php?web_id=1670348" target="_blank" title="站长统计">站长统计</a>
-				<script src="__PUBLIC__/Home/js/metinfo(2).js"></script>
-			</p>
-			<p>电话：0731-12345678 12345678  QQ:88888888 999999  Email:admin@admin.com</p>
-			<div id="metinfo_91mb_Powered"></div>
-			<p></p>
-		</div>
-	</div>
+	<include file="Public:foot" />
 </footer>
 <script src="__PUBLIC__/Home/js/fun.inc.js" type="text/javascript"></script>
 
