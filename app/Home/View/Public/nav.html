@@ -21,7 +21,7 @@ $cate_2=$type->getSon(1239);
 		<li id="nav_2" class=""><a href="news.html" title="新闻中心" class="hover-none nav"><span>新闻中心</span></a>
 			<dl >
 				<foreach name="cate_1" item="v">
-					<dd><a href="{:U('Home/Product/index',array('tid'=>$v['id']))}" title="{$v.title}">{$v.title}</a></dd>
+					<dd><a href="{:U('Home/Fang/index',array('tid'=>$v['id']))}" title="{$v.title}">{$v.title}</a></dd>
 				</foreach>
 			</dl>
 		</li>
